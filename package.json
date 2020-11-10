@@ -1,0 +1,19 @@
+{
+  "name": "pet-weather-app",
+  "version": "1.0.0",
+  "description": "Pet Weather App - a showcase of a web application based on Node.js",
+  "main": "app/app.js",
+  "scripts": {
+    "dev": "NODE_ENV=dev nodemon -e css,ejs,js,json --watch app",
+    "start": "node app/app.js"
+  },
+  "author": "Henry Wang",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "dotenv": "^5.0.1",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "reload": "^1.0.0"
+  }
+}

@@ -1,0 +1,106 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:100, 300);
+
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  color: #C1343F;
+}
+
+p {
+  font-family: inherit;
+  font-weight: 100;
+}
+
+
+li {
+  font-family: inherit;
+  font-weight: 100;
+}
+
+/**  Header Navigation **/
+
+header {
+  font-size: 2rem;
+}
+
+/**  Navbar **/
+
+header .navbar {
+  background: #CF5565;
+  margin-bottom: 0;
+  border-radius: 0;
+  font-family: "Roboto", sans-serif;
+  font-weight: 100;
+}
+
+header .navbar-default {
+  border: none;
+  border-radius: 0;
+  padding: 10px 0;
+}
+
+.navbar-inverse {
+  border: 0;
+}
+
+header .navbar-brand {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.3em;
+  font-weight: 300;
+}
+
+header .navbar-inverse .navbar-brand {
+  color: white;
+}
+
+header .navbar-inverse .navbar-nav>li>a {
+  color: white;
+} 
+
+.maincontent {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8rem;
+  line-height: 160%;
+}
+
+.jumbotron {
+  padding: 40px 0;
+  background-color: #FFFFFF;
+}
+
+.page-header {
+  border-bottom: 0px;
+}
+
+.info_msg {
+  color: #0000FF;
+}
+
+.error_msg {
+  color: #FF0000;
+}
+
+.need_shelter_false>h1 {
+  color: #0000FF;
+}
+
+.need_shelter_true {
+}
+
+.pet_name, .pet_location{
+  color: #C4663F;
+  font-weight: bold;
+  font-style: italic;
+}
+
+footer {
+  font-size: 15px;
+  margin: 40px 0px 30px 0px;
+  color: #000000;
+}

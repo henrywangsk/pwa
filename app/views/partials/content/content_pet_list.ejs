@@ -1,0 +1,69 @@
+<div class="maincontent">
+    <div class="page-header text-center">
+      <h1 class="article-title">Does My Pet Need An Umbrella?</h1>
+      <h2>Select a pet to find out</h2>
+    </div>
+
+    <div class="container">
+      <table class="table table-bordered table-striped table-hover table-responsive">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Type</th>
+              <th>Breed</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+          <% if (pets) { %>
+          <% pets.forEach(function(pet) { %>
+
+            <tr>
+              <td><%=pet.name%></td>
+              <td><%=pet.type%></td>
+              <td><%=pet.breed%></td>
+              <td><a href="/pets/<%=pet.pet_id%>">view</></td>
+            </tr>
+
+          <% }); %>
+          <% } %>
+          </tbody>
+      </table>
+    </div>
+
+    <!-- Add Google Maps -->
+    <div class="container">
+        <div id="googleMap" style="height:800px;width:100%;"></div>
+    </div>
+
+    <script>
+    function myMap() {
+        var myCenter = new google.maps.LatLng(50.451128, -104.611999);
+        var mapProp = {center:myCenter, zoom:4, scrollwheel:false, draggable:true, mapTypeId:google.maps.MapTypeId.ROADMAP};
+        var map = new google.maps.Map(document.getElementById("googleMap"), mapProp);
+        var marker = new google.maps.Marker({position:myCenter});
+        marker.setMap(map);
+
+        setPetMarkers(map);
+    }
+    function setPetMarkers(map) {
+        <% if (pets) { %>
+            <% pets.forEach(function(pet) { %>
+                var marker<%=pet.pet_id%> = new google.maps.Marker({
+                    position: new google.maps.LatLng(<%=pet.latitude%>, <%=pet.longitude%>),
+                    map: map,
+                    title: '<%=pet.name%>, <%=pet.type%>, <%=pet.breed%>',
+                    icon: '/images/pet_marker.png'
+                });
+
+                  marker<%=pet.pet_id%>.addListener('click', function() {
+                      window.location='/pets/' + <%=pet.pet_id%>; 
+                  });
+        <%    })
+           }
+        %>
+    }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<%=googleMapApiKey%>&callback=myMap"></script>
+
+</div>
